@@ -8,10 +8,19 @@ resource "aws_kms_key" "this" {
   is_enabled               = var.is_enabled
   enable_key_rotation      = var.enable_key_rotation
   tags                     = var.tags
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      tags,
+    ]
+  }
 }
 
 resource "aws_kms_alias" "this" {
   count         = var.enabled ? 1 : 0
   name          = format("alias/%s", var.name)
   target_key_id = join("", aws_kms_key.default.*.key_id)
+  lifecycle {
+    create_before_destroy = true
+  }
 }
