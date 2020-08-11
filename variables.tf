@@ -9,6 +9,14 @@ variable "description" {
   description = "The description of the key as viewed in AWS console."
   default     = ""
 }
+
+variable "enabled" {
+  type        = bool
+  description = "Do you want to create KMS key"
+  default     = true
+}
+
+
 variable "key_usage" {
   type        = string
   description = "Specifies the intended use of the key. Valid values: ENCRYPT_DECRYPT or SIGN_VERIFY. Defaults to ENCRYPT_DECRYPT."

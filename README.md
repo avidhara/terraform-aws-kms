@@ -35,6 +35,7 @@ module "kms" {
 | deletion\_window\_in\_days | Duration in days after which the key is deleted after destruction of the resource, must be between 7 and 30 days. Defaults to 30 days. | `number` | `30` | no |
 | description | The description of the key as viewed in AWS console. | `string` | `""` | no |
 | enable\_key\_rotation | Specifies whether key rotation is enabled. Defaults to false | `bool` | `false` | no |
+| enabled | Do you want to create KMS key | `bool` | `true` | no |
 | is\_enabled | Specifies whether the key is enabled. Defaults to true. | `bool` | `true` | no |
 | key\_usage | Specifies the intended use of the key. Valid values: ENCRYPT\_DECRYPT or SIGN\_VERIFY. Defaults to ENCRYPT\_DECRYPT. | `string` | `"ENCRYPT_DECRYPT"` | no |
 | name | Name of the alias | `string` | `""` | no |
