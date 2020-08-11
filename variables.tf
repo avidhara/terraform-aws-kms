@@ -1,6 +1,6 @@
 variable "name" {
   type        = string
-  description = "Name of the alisa"
+  description = "Name of the alias"
   default     = ""
 }
 
